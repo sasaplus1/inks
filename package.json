@@ -23,6 +23,16 @@
     "trailingComma": "none"
   },
   "private": true,
+  "scripts": {
+    "fix": "run-p -l fix:*",
+    "fix:eslint": "eslint --fix .",
+    "fix:fixpack": "npx fixpack package.json packages/*/package.json",
+    "fix:prettier": "prettier --write .",
+    "lint": "run-p -l lint:*",
+    "lint:eslint": "eslint .",
+    "lint:fixpack": "npx fixpack --dryRun package.json packages/*/package.json",
+    "lint:prettier": "prettier --check ."
+  },
   "workspaces": [
     "packages/*"
   ]
