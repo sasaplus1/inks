@@ -1,4 +1,8 @@
 {
+  "devDependencies": {
+    "@tsconfig/strictest": "^2.0.2",
+    "typescript": "^5.2.2"
+  },
   "license": "MIT",
   "packageManager": "npm@10.0.0",
   "private": true,
