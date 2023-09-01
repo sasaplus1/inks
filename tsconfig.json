@@ -1,0 +1,8 @@
+{
+  "extends": "@tsconfig/strictest",
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "ESNext",
+    "moduleResolution": "Bundler"
+  }
+}
