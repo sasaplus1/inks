@@ -13,6 +13,10 @@
   },
   "license": "MIT",
   "packageManager": "npm@10.0.0",
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
   "private": true,
   "workspaces": [
     "packages/*"
