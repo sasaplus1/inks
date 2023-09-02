@@ -13,6 +13,12 @@ const tsdocRules = {
   'tsdoc/syntax': 'warn'
 };
 
+const reactPluginSettings = {
+  react: {
+    version: 'detect'
+  }
+};
+
 const config = {};
 const overrides = [];
 
@@ -22,6 +28,9 @@ overrides.push({
   plugins: [...typescriptPlugins],
   rules: {
     ...tsdocRules
+  },
+  settings: {
+    ...reactPluginSettings
   }
 });
 
@@ -31,6 +40,9 @@ overrides.push({
   plugins: [...typescriptPlugins],
   rules: {
     ...tsdocRules
+  },
+  settings: {
+    ...reactPluginSettings
   }
 });
 
