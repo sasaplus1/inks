@@ -1,0 +1,53 @@
+{
+  "name": "@sasaplus1/ink-focus-within",
+  "description": "simulate :focus-within for ink",
+  "version": "0.1.0",
+  "devDependencies": {
+    "@types/node": "^20.5.8",
+    "@types/react": "^18.2.21",
+    "ink": "^4.4.0",
+    "microbundle": "^0.15.1",
+    "react": "^18.2.0",
+    "tsx": "^3.12.8"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "exports": {
+    ".": {
+      "default": "./dist/index.modern.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "./dist/*"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.mjs",
+  "peerDependencies": {
+    "ink": "4",
+    "react": "18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "directory": "packages/ink-focus-within",
+    "type": "git",
+    "url": "https://github.com/sasaplus1/inks.git"
+  },
+  "scripts": {
+    "build": "microbundle build --target node --jsx React.createElement --jsxFragment React.Fragment",
+    "start": "./index.preview.tsx",
+    "watch": "microbundle watch --target node --jsx React.createElement --jsxFragment React.Fragment"
+  },
+  "sideEffects": false,
+  "source": "./index.tsx",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "umd:main": "./dist/index.umd.js",
+  "unpkg": "./dist/index.umd.js"
+}
