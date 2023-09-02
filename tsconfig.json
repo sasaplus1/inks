@@ -1,8 +1,15 @@
 {
   "extends": "@tsconfig/strictest",
   "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
     "jsx": "react",
+    "lib": [
+      "DOM"
+    ],
     "module": "ESNext",
-    "moduleResolution": "Bundler"
+    "moduleResolution": "Bundler",
+    "sourceMap": true,
+    "target": "ESNext"
   }
 }
