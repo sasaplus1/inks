@@ -4,6 +4,8 @@
     "declaration": true,
     "declarationMap": true,
     "jsx": "react",
+    "jsxFactory": "React.createElement",
+    "jsxFragmentFactory": "React.Fragment",
     "lib": [
       "DOM"
     ],
