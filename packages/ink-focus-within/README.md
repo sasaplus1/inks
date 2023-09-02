@@ -1,11 +1,11 @@
-# ink-focus-with-in
+# ink-focus-within
 
 simulate `:focus-within` for ink
 
 ## Installation
 
 ```bash
-$ npm install @sasaplus1/ink-focus-with-in
+$ npm install @sasaplus1/ink-focus-within
 ```
 
 ## Usage
