@@ -40,9 +40,9 @@
     "url": "https://github.com/sasaplus1/inks.git"
   },
   "scripts": {
-    "build": "microbundle build --target node",
+    "build": "microbundle build --target node --jsx React.createElement --jsxFragment React.Fragment",
     "start": "./index.preview.tsx",
-    "watch": "microbundle watch --target node"
+    "watch": "microbundle watch --target node --jsx React.createElement --jsxFragment React.Fragment"
   },
   "sideEffects": false,
   "source": "./index.tsx",
