@@ -1,6 +1,6 @@
 # inks
 
-my ink packages
+my [ink](https://github.com/vadimdemedes/ink) packages
 
 ## License
 
