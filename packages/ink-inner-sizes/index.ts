@@ -2,6 +2,7 @@ import type { BoxProps } from 'ink';
 
 /**
  * calculate inner sizes
+ *
  * @param sizes - box sizes
  * @param props - box props
  * @returns inner sizes
@@ -18,6 +19,7 @@ export function innerSizes(
 
 /**
  * calculate inner width
+ *
  * @param width - box width
  * @param props - box props
  * @returns inner width
