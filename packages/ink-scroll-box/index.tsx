@@ -5,6 +5,8 @@ import * as React from 'react';
 
 export type Props = {
   children: React.ReactNode[];
+  /** initial height */
+  initialHeight?: number;
   /** children offset */
   offset: number;
 } & BoxProps;
@@ -16,17 +18,17 @@ export type Props = {
  * @param props - props
  */
 export function ScrollBox(props: Props) {
-  const { children, offset, ...boxProps } = props;
+  const { children, initialHeight = 0, offset, ...boxProps } = props;
 
   const ref = React.useRef<DOMElement>(null);
 
-  const [height, setHeight] = React.useState(0);
+  const [height, setHeight] = React.useState(initialHeight);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (ref && ref.current) {
       setHeight(measureElement(ref.current).height);
     }
-  }, []);
+  }, [ref]);
 
   return (
     <Box {...boxProps} flexDirection="column" ref={ref}>
