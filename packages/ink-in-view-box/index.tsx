@@ -12,7 +12,7 @@ export type Props = {
   /** initial height */
   initialHeight?: number;
   /** initial offset */
-  initialOffset: number;
+  initialOffset?: number;
 } & BoxProps;
 
 /**
@@ -51,6 +51,7 @@ export function InViewBox(props: Props) {
     end: height + offset.current
   };
 
+  // move to cursor position if cursor is out of range
   if (cursor < offset.current) {
     slice.start = cursor;
     slice.end = cursor + height;
@@ -59,7 +60,14 @@ export function InViewBox(props: Props) {
     slice.end = cursor + 1;
   }
 
-  offset.current = slice.start;
+  // reset offset if out of range
+  if (slice.start < 0) {
+    offset.current = 0;
+  } else if (slice.start > children.length - 1) {
+    offset.current = children.length - 1;
+  } else {
+    offset.current = slice.start;
+  }
 
   return (
     <Box {...boxProps} flexDirection="column" ref={ref}>
