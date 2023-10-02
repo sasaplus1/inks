@@ -14,12 +14,18 @@ for (let i = 0; i < 100; i++) {
 function App() {
   const { exit } = useApp();
 
+  const [toggle, setToggle] = React.useState(true);
+
   const [cursor, setCursor] = React.useState(-2);
   const [height, setHeight] = React.useState(10);
 
   useInput((input, key) => {
     if (input === 'q') {
       exit();
+    }
+
+    if (input === 's') {
+      setToggle((switchValue) => !switchValue);
     }
 
     switch (input) {
@@ -85,31 +91,53 @@ function App() {
 
   return (
     <React.Fragment>
-      <Text bold>press q to exit | press up/down(or k/j) to change cursor</Text>
       <Text bold>
-        press 1-9 to change cursor | press g/G to change cursor to start/end |
-        press h/l to change height
+        press q to exit | press up/down(or k/j) to change cursor | press s to
+        toggle box visibility
+      </Text>
+      <Text bold>
+        press 1-9 to change cursor | press g/G to change cursor to start/end
+        {toggle && (
+          <React.Fragment> | press h/l to change height</React.Fragment>
+        )}
       </Text>
       <Text bold>cursor: {cursor}</Text>
-      <Box borderStyle="single" flexDirection="row">
-        <InViewBox
-          cursor={cursor}
-          height={height}
-          initialOffset={0}
-          initialHeight={height}
-          flexGrow={1}
-        >
-          {children.map((child, index) =>
-            cursor === index ? (
-              <Text key={'cursor:' + index} inverse>
-                {child}
-              </Text>
-            ) : (
-              child
-            )
-          )}
-        </InViewBox>
-      </Box>
+      {toggle ? (
+        <Box borderStyle="single" flexDirection="row">
+          <InViewBox
+            cursor={cursor}
+            height={height}
+            initialOffset={0}
+            initialHeight={height}
+            flexGrow={1}
+          >
+            {children.map((child, index) =>
+              cursor === index ? (
+                <Text key={'cursor:' + index} inverse>
+                  {child}
+                </Text>
+              ) : (
+                child
+              )
+            )}
+          </InViewBox>
+        </Box>
+      ) : (
+        // InViewBox can set height to 100%
+        <Box borderStyle="single" flexDirection="row" height={20}>
+          <InViewBox cursor={cursor} height="100%" flexGrow={1}>
+            {children.map((child, index) =>
+              cursor === index ? (
+                <Text key={'cursor:' + index} inverse>
+                  {child}
+                </Text>
+              ) : (
+                child
+              )
+            )}
+          </InViewBox>
+        </Box>
+      )}
     </React.Fragment>
   );
 }
