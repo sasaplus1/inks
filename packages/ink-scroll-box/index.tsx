@@ -28,7 +28,7 @@ export function ScrollBox(props: Props) {
     if (ref && ref.current) {
       setHeight(measureElement(ref.current).height);
     }
-  }, [ref]);
+  }, [ref, props.height]);
 
   return (
     <Box {...boxProps} flexDirection="column" ref={ref}>
