@@ -8,7 +8,7 @@
   ],
   "packageRules": [
     {
-      "matchpackagePatterns": ["@types/react", "react"],
+      "matchPackagePatterns": ["@types/react", "react"],
       "allowedVersions": "<=18"
     }
   ]
