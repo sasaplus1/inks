@@ -8,8 +8,8 @@
   ],
   "packageRules": [
     {
-      "matchPackagePatterns": ["@types/react", "react"],
-      "allowedVersions": "<=18"
+      "allowedVersions": "<=18",
+      "matchPackageNames": ["/@types/react/", "/react/"]
     }
   ]
 }
