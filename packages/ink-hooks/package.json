@@ -3,7 +3,7 @@
   "description": "hooks for ink",
   "version": "0.1.0",
   "devDependencies": {
-    "@types/node": "22.13.16",
+    "@types/node": "22.13.17",
     "@types/react": "18.3.20",
     "ink": "5.2.0",
     "microbundle": "0.15.1",
