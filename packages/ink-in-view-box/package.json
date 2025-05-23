@@ -3,7 +3,7 @@
   "description": "scrollable cursor managed box component for ink",
   "version": "0.2.0",
   "devDependencies": {
-    "@types/node": "22.15.19",
+    "@types/node": "22.15.21",
     "@types/react": "18.3.21",
     "ink": "5.2.1",
     "microbundle": "0.15.1",
