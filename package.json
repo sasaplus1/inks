@@ -36,6 +36,7 @@
     "lint:fixpack": "npx fixpack --dryRun package.json packages/*/package.json",
     "lint:prettier": "prettier --check .",
     "start": "turbo run start",
+    "test": "turbo run test",
     "watch": "turbo run watch"
   },
   "workspaces": [
