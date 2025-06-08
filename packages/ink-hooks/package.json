@@ -3,7 +3,7 @@
   "description": "hooks for ink",
   "version": "0.1.0",
   "devDependencies": {
-    "@types/node": "22.15.29",
+    "@types/node": "22.15.30",
     "@types/react": "19.1.0",
     "ink": "6.0.0",
     "ink-testing-library": "4.0.0",
