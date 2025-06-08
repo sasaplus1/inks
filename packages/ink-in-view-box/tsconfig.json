@@ -4,11 +4,6 @@
     "outDir": "./dist",
     "rootDir": "./"
   },
-  "include": [
-    "index.tsx"
-  ],
-  "exclude": [
-    "dist",
-    "*.preview.tsx"
-  ]
+  "include": ["index.tsx"],
+  "exclude": ["dist", "*.preview.tsx"]
 }
