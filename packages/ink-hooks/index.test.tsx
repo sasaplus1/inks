@@ -47,9 +47,7 @@ describe('ink-hooks', () => {
 
   test('enterFullscreen function returns exit function', () => {
     // Mock process.stdout.write to avoid actual terminal manipulation
-    const originalWrite = process.stdout.write;
-    const mockWrite = vi.fn();
-    process.stdout.write = mockWrite as any;
+    const mockWrite = vi.spyOn(process.stdout, 'write').mockReturnValue(true);
 
     const exitFullscreen = enterFullscreen();
 
@@ -61,6 +59,6 @@ describe('ink-hooks', () => {
     expect(mockWrite).toHaveBeenCalledWith('\x1b[?1049l');
 
     // Restore original function
-    process.stdout.write = originalWrite;
+    mockWrite.mockRestore();
   });
 });
