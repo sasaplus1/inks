@@ -39,6 +39,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "clean": "rm -rf dist",
     "start": "./index.preview.tsx",
     "watch": "tsc --watch"
   },
