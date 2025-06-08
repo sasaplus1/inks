@@ -1,4 +1,4 @@
-#!/usr/bin/env node --no-warnings --loader tsx
+#!/usr/bin/env node --no-warnings --import tsx
 
 import * as React from 'react';
 import { render, useApp, useInput, Box, Text } from 'ink';

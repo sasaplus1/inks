@@ -1,4 +1,4 @@
-#!/usr/bin/env node --no-warnings --loader tsx
+#!/usr/bin/env node --no-warnings --import tsx
 
 import type { BoxProps, DOMElement } from 'ink';
 
