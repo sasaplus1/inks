@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "paths": {
-      "ink": ["../../node_modules/ink/build/"]
+      "ink": ["./node_modules/ink/build/index.d.ts"]
     }
   }
 }
