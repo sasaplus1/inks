@@ -6,7 +6,7 @@
     "@types/node": "22.15.29",
     "@types/react": "19.1.0",
     "ink": "6.0.0",
-    "ink-testing-library": "^4.0.0",
+    "ink-testing-library": "4.0.0",
     "react": "19.1.0",
     "tsx": "4.19.4",
     "vitest": "3.2.2"
