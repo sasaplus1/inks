@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "paths": {
-      "ink": ["./node_modules/ink/build/index.d.ts"]
-    }
-  }
+    "outDir": "./dist",
+    "rootDir": "./"
+  },
+  "include": ["index.tsx"],
+  "exclude": ["dist", "*.preview.tsx"]
 }

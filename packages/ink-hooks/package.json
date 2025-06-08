@@ -6,7 +6,6 @@
     "@types/node": "22.15.29",
     "@types/react": "19.1.0",
     "ink": "6.0.0",
-    "microbundle": "0.15.1",
     "react": "19.1.0",
     "tsx": "4.19.4"
   },
@@ -15,17 +14,16 @@
   },
   "exports": {
     ".": {
-      "default": "./dist/index.modern.mjs",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
   },
   "files": [
     "./dist/*"
   ],
   "license": "MIT",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.module.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "peerDependencies": {
     "ink": "6",
     "react": "19"
@@ -40,14 +38,13 @@
     "url": "https://github.com/sasaplus1/inks.git"
   },
   "scripts": {
-    "build": "microbundle build --target node --jsx React.createElement --jsxFragment React.Fragment",
+    "build": "tsc",
+    "clean": "rm -rf dist",
     "start": "./index.preview.tsx",
-    "watch": "microbundle watch --target node --jsx React.createElement --jsxFragment React.Fragment"
+    "watch": "tsc --watch"
   },
   "sideEffects": false,
   "source": "./index.ts",
   "type": "module",
-  "types": "./dist/index.d.ts",
-  "umd:main": "./dist/index.umd.js",
-  "unpkg": "./dist/index.umd.js"
+  "types": "./dist/index.d.ts"
 }
