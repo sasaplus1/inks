@@ -10,6 +10,7 @@
     "eslint-plugin-tsdoc": "0.4.0",
     "npm-run-all2": "8.0.4",
     "prettier": "3.5.3",
+    "turbo": "^2.4.0",
     "typescript": "5.8.3"
   },
   "engines": {
@@ -17,12 +18,15 @@
     "npm": "11"
   },
   "license": "MIT",
+  "packageManager": "npm@11.3.0",
   "prettier": {
     "singleQuote": true,
     "trailingComma": "none"
   },
   "private": true,
   "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
     "fix": "run-p -l fix:*",
     "fix:eslint": "ESLINT_USE_FLAT_CONFIG=false eslint --fix .",
     "fix:fixpack": "npx fixpack package.json packages/*/package.json",
@@ -30,7 +34,9 @@
     "lint": "run-p -l lint:*",
     "lint:eslint": "ESLINT_USE_FLAT_CONFIG=false eslint .",
     "lint:fixpack": "npx fixpack --dryRun package.json packages/*/package.json",
-    "lint:prettier": "prettier --check ."
+    "lint:prettier": "prettier --check .",
+    "start": "turbo run start",
+    "watch": "turbo run watch"
   },
   "workspaces": [
     "packages/*"
