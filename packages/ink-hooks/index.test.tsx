@@ -22,7 +22,7 @@ describe('ink-hooks', () => {
   test('useResize hook returns terminal dimensions', () => {
     const { lastFrame } = render(<TestResizeComponent />);
     const output = lastFrame();
-    
+
     // Should contain size information - columns should be a number
     expect(output).toContain('Size:');
     expect(output).toContain('Alias:');
@@ -32,7 +32,7 @@ describe('ink-hooks', () => {
   test('useResize hook provides aliases for width and height', () => {
     const { lastFrame } = render(<TestResizeComponent />);
     const output = lastFrame();
-    
+
     // Verify that width aliases columns and height aliases rows
     expect(output).toContain('Size:');
     expect(output).toContain('Alias:');
@@ -41,7 +41,7 @@ describe('ink-hooks', () => {
   test('useFullscreen hook renders without error', () => {
     const { lastFrame } = render(<TestFullscreenComponent />);
     const output = lastFrame();
-    
+
     expect(output).toContain('Fullscreen enabled');
   });
 
@@ -52,15 +52,15 @@ describe('ink-hooks', () => {
     process.stdout.write = mockWrite as any;
 
     const exitFullscreen = enterFullscreen();
-    
+
     expect(mockWrite).toHaveBeenCalledWith('\x1b[?1049h');
     expect(typeof exitFullscreen).toBe('function');
-    
+
     // Test exit function
     exitFullscreen();
     expect(mockWrite).toHaveBeenCalledWith('\x1b[?1049l');
-    
+
     // Restore original function
     process.stdout.write = originalWrite;
   });
-}); 
+});

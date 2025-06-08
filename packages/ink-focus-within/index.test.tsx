@@ -2,17 +2,17 @@ import * as React from 'react';
 import { render } from 'ink-testing-library';
 import { Text } from 'ink';
 import { describe, test, expect } from 'vitest';
-import { 
-  FocusedIdProvider, 
-  useFocusedId, 
-  NestedIdProvider, 
-  useNestedId, 
-  useFocusWithin 
+import {
+  FocusedIdProvider,
+  useFocusedId,
+  NestedIdProvider,
+  useNestedId,
+  useFocusWithin
 } from './index';
 
 function TestFocusedIdComponent() {
   const { focusedId, useSetFocusedId } = useFocusedId();
-  
+
   useSetFocusedId({
     id: 'test-component',
     nestedId: 'root',
@@ -29,7 +29,11 @@ function TestNestedIdComponent() {
 
 function TestFocusWithinComponent({ targetId }: { targetId: string }) {
   const isFocused = useFocusWithin(targetId);
-  return <Text>Focus Within {targetId}: {isFocused ? 'true' : 'false'}</Text>;
+  return (
+    <Text>
+      Focus Within {targetId}: {isFocused ? 'true' : 'false'}
+    </Text>
+  );
 }
 
 describe('ink-focus-within', () => {
@@ -91,7 +95,7 @@ describe('ink-focus-within', () => {
   test('useFocusWithin works correctly', () => {
     function TestComponent() {
       const { useSetFocusedId } = useFocusedId();
-      
+
       useSetFocusedId({
         id: 'button',
         nestedId: 'form.section',
@@ -126,7 +130,7 @@ describe('ink-focus-within', () => {
     function TestComponent() {
       const { useSetFocusedId } = useFocusedId();
       const { nestedId } = useNestedId();
-      
+
       useSetFocusedId({
         id: 'input',
         nestedId,
@@ -149,4 +153,4 @@ describe('ink-focus-within', () => {
     const output = lastFrame();
     expect(output).toContain('Current: .form.fieldset');
   });
-}); 
+});

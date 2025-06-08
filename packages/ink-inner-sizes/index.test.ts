@@ -6,9 +6,9 @@ describe('ink-inner-sizes', () => {
     test('calculates both inner width and height', () => {
       const sizes = { width: 100, height: 50 };
       const props = { borderStyle: 'single' as const };
-      
+
       const result = innerSizes(sizes, props);
-      
+
       expect(result).toEqual({
         innerWidth: 98, // 100 - 2 (left and right borders)
         innerHeight: 48 // 50 - 2 (top and bottom borders)
@@ -38,10 +38,10 @@ describe('ink-inner-sizes', () => {
     });
 
     test('does not subtract when borderStyle is set but specific borders override', () => {
-      const result = innerWidth(100, { 
-        borderStyle: 'single', 
-        borderLeft: true, 
-        borderRight: false 
+      const result = innerWidth(100, {
+        borderStyle: 'single',
+        borderLeft: true,
+        borderRight: false
       });
       expect(result).toBe(99); // Only left border
     });
@@ -74,10 +74,10 @@ describe('ink-inner-sizes', () => {
     });
 
     test('does not subtract when borderStyle is set but specific borders override', () => {
-      const result = innerHeight(50, { 
-        borderStyle: 'single', 
-        borderTop: true, 
-        borderBottom: false 
+      const result = innerHeight(50, {
+        borderStyle: 'single',
+        borderTop: true,
+        borderBottom: false
       });
       expect(result).toBe(49); // Only top border
     });
@@ -90,7 +90,10 @@ describe('ink-inner-sizes', () => {
 
   describe('edge cases', () => {
     test('handles zero dimensions', () => {
-      const result = innerSizes({ width: 0, height: 0 }, { borderStyle: 'single' });
+      const result = innerSizes(
+        { width: 0, height: 0 },
+        { borderStyle: 'single' }
+      );
       expect(result).toEqual({
         innerWidth: -2,
         innerHeight: -2
@@ -98,7 +101,10 @@ describe('ink-inner-sizes', () => {
     });
 
     test('handles small dimensions', () => {
-      const result = innerSizes({ width: 1, height: 1 }, { borderStyle: 'single' });
+      const result = innerSizes(
+        { width: 1, height: 1 },
+        { borderStyle: 'single' }
+      );
       expect(result).toEqual({
         innerWidth: -1,
         innerHeight: -1
@@ -107,11 +113,16 @@ describe('ink-inner-sizes', () => {
 
     test('handles various border styles', () => {
       const testCases = [
-        'single', 'double', 'round', 'bold', 'singleDouble', 
-        'doubleSingle', 'classic'
+        'single',
+        'double',
+        'round',
+        'bold',
+        'singleDouble',
+        'doubleSingle',
+        'classic'
       ] as const;
 
-      testCases.forEach(borderStyle => {
+      testCases.forEach((borderStyle) => {
         const result = innerSizes({ width: 10, height: 10 }, { borderStyle });
         expect(result).toEqual({
           innerWidth: 8,
@@ -120,4 +131,4 @@ describe('ink-inner-sizes', () => {
       });
     });
   });
-}); 
+});

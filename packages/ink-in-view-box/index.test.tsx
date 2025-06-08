@@ -97,7 +97,7 @@ describe('InViewBox', () => {
 
   test('handles cursor out of range gracefully', () => {
     const children = createTestChildren(3);
-    
+
     // Test with cursor beyond children length - should not crash
     const { lastFrame: lastFrame1 } = render(
       <InViewBox cursor={10} initialHeight={3}>
@@ -114,4 +114,4 @@ describe('InViewBox', () => {
     );
     expect(lastFrame2()).toBeDefined();
   });
-}); 
+});

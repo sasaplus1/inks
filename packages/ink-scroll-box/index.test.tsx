@@ -121,4 +121,4 @@ describe('ScrollBox', () => {
     // Since initialHeight is 2, should only show first 2 items initially
     // Note: This test might need adjustment based on actual behavior
   });
-}); 
+});
