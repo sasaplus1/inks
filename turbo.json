@@ -23,6 +23,21 @@
     "watch": {
       "cache": false,
       "persistent": true
+    },
+    "test": {
+      "dependsOn": [],
+      "inputs": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "index.ts",
+        "index.tsx",
+        "index.test.ts",
+        "index.test.tsx",
+        "vitest.config.ts",
+        "tsconfig.json",
+        "package.json"
+      ],
+      "outputs": []
     }
   },
   "globalDependencies": [
