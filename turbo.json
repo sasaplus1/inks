@@ -3,7 +3,14 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["src/**/*.ts", "src/**/*.tsx", "index.ts", "index.tsx", "tsconfig.json", "package.json"],
+      "inputs": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "index.ts",
+        "index.tsx",
+        "tsconfig.json",
+        "package.json"
+      ],
       "outputs": ["dist/**"]
     },
     "clean": {
@@ -24,4 +31,4 @@
     ".prettierrc",
     ".editorconfig"
   ]
-} 
+}
