@@ -11,5 +11,6 @@
     "moduleResolution": "Bundler",
     "sourceMap": true,
     "target": "ES2022"
-  }
+  },
+  "files": []
 }
