@@ -5,10 +5,18 @@
   "devDependencies": {
     "@types/node": "22.15.30",
     "@types/react": "19.1.0",
+    "@typescript-eslint/eslint-plugin": "8.33.1",
+    "@typescript-eslint/parser": "8.33.1",
+    "eslint": "9.28.0",
+    "eslint-config-prettier": "10.1.5",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "eslint-plugin-tsdoc": "0.4.0",
     "ink": "6.0.0",
     "ink-testing-library": "4.0.0",
     "react": "19.1.0",
     "tsx": "4.19.4",
+    "typescript": "5.8.3",
     "vitest": "3.2.2"
   },
   "engines": {
@@ -42,6 +50,8 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist",
+    "fix": "ESLINT_USE_FLAT_CONFIG=false eslint --fix .",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint .",
     "start": "./index.preview.tsx",
     "test": "vitest run",
     "watch": "tsc --watch"
