@@ -16,6 +16,33 @@
     "clean": {
       "cache": false
     },
+    "lint": {
+      "dependsOn": [],
+      "inputs": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "index.ts",
+        "index.tsx",
+        "**/*.js",
+        "**/*.jsx",
+        "tsconfig.json"
+      ],
+      "outputs": []
+    },
+    "fix": {
+      "dependsOn": [],
+      "inputs": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "index.ts",
+        "index.tsx",
+        "**/*.js",
+        "**/*.jsx",
+        "tsconfig.json"
+      ],
+      "outputs": [],
+      "cache": false
+    },
     "start": {
       "cache": false,
       "persistent": true

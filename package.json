@@ -1,18 +1,10 @@
 {
   "devDependencies": {
     "@tsconfig/strictest": "2.0.5",
-    "@typescript-eslint/eslint-plugin": "8.33.1",
-    "@typescript-eslint/parser": "8.33.1",
-    "eslint": "9.28.0",
-    "eslint-config-prettier": "10.1.5",
-    "eslint-plugin-react": "7.37.5",
-    "eslint-plugin-react-hooks": "5.2.0",
-    "eslint-plugin-tsdoc": "0.4.0",
     "fixpack": "4.0.0",
     "npm-run-all2": "8.0.4",
     "prettier": "3.5.3",
-    "turbo": "2.5.4",
-    "typescript": "5.8.3"
+    "turbo": "2.5.4"
   },
   "engines": {
     "node": "22",
@@ -29,13 +21,13 @@
     "build": "turbo run build",
     "clean": "turbo run clean",
     "fix": "run-p -l fix:*",
-    "fix:eslint": "ESLINT_USE_FLAT_CONFIG=false eslint --fix .",
-    "fix:fixpack": "fixpack package.json packages/*/package.json",
+    "fix:fixpack": "fixpack package.json",
     "fix:prettier": "prettier --write .",
+    "fix:turbo": "turbo run fix",
     "lint": "run-p -l lint:*",
-    "lint:eslint": "ESLINT_USE_FLAT_CONFIG=false eslint .",
-    "lint:fixpack": "fixpack --dryRun package.json packages/*/package.json",
+    "lint:fixpack": "fixpack --dryRun package.json",
     "lint:prettier": "prettier --check .",
+    "lint:turbo": "turbo run lint",
     "start": "turbo run start",
     "test": "turbo run test",
     "watch": "turbo run watch"
