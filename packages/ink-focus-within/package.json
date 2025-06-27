@@ -3,7 +3,7 @@
   "description": "simulate :focus-within for ink",
   "version": "0.1.0",
   "devDependencies": {
-    "@types/node": "22.15.32",
+    "@types/node": "22.15.33",
     "@types/react": "19.1.0",
     "@typescript-eslint/eslint-plugin": "8.35.0",
     "@typescript-eslint/parser": "8.35.0",
