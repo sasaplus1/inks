@@ -3,7 +3,7 @@
   "description": "scrollable cursor managed box component for ink",
   "version": "0.2.0",
   "devDependencies": {
-    "@types/node": "22.16.3",
+    "@types/node": "22.16.4",
     "@types/react": "19.1.0",
     "@typescript-eslint/eslint-plugin": "8.37.0",
     "@typescript-eslint/parser": "8.37.0",
