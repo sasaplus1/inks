@@ -7,7 +7,7 @@
     "turbo": "2.6.3"
   },
   "engines": {
-    "node": "22",
+    "node": "24",
     "npm": "11"
   },
   "license": "MIT",
